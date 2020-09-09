@@ -1,0 +1,85 @@
+<%- include("partials/header") %>
+
+<div class="header container bg-light">
+    <div class="d-flex flex-wrap align-items-center bg-light justify-content-between">
+        <div class="text-left">
+            <span>
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalScrollable">
+                    <span style="font-size: x-large;">&#8801;</span>
+                    <!-- LISTS -->
+                </button>
+            </span>
+        </div>
+        <div class="text-center">
+            <form class="form-inline justify-content-center" action="/weather" method="POST">
+                <label>Check Weather</label>
+                <div class="d-flex flex-nowrap justify-content-between">
+                    <input type="text" class="form-control ml-3" id="weatherInput" name="city"
+                        placeholder="Enter city Name">&emsp;
+                    <button class="btn-dark" type="submit">Go</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="box bg-dark text-center" id="heading">
+    <h1><%= listTitle %> </h1>
+</div>
+<div class="box" style="margin-bottom: 4.5rem;">
+    <form action="/delete" method="POST">
+        <% newItems.forEach((item) => { %>
+        <div class="item">
+            <input type="checkbox" name="checkbox" value="<%= item._id %>" onChange="this.form.submit()">
+            <p id="task"><%= item.task %></p>
+        </div>
+        <% }); %>
+        <input type="hidden" name="listName" value="<%= listTitle %>"></input:null>
+    </form>
+    <form class="item" action="/" method="post">
+        <input type="text" name="newTask" placeholder="Enter new task here" autocomplete="off" required>
+        <button class="add btn-dark" type="submit" name="switch" value="<%= listTitle %>">+</button>
+    </form>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-light">
+          <h5 class="modal-title" id="exampleModalScrollableTitle">Your Lists</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="text-center">
+                <h4>Welcome! <span class="text-info font-weight-bold"><%= name %></span></h4>
+                <a href="/logout" class="btn btn-dark mt-1">LOGOUT</a>
+            </div>
+            <hr>
+            <form class="justify-content-between align-items-center" action="/createList" method="POST">
+                <label style="font-size: large;">Create new List</label>
+                <div class="d-flex flex-nowrap justify-content-between align-items-center">
+                    <input type="text" class="form-control mr-3" name="listName"
+                        placeholder="enter list name">&emsp;
+                    <button class="addListBtn bg-dark" type="submit">+</button>
+                </div>
+            </form>
+            <hr>
+            <h4>Lists</h3>
+                <hr>
+                <a class="text-decoration-none" href="/"><h6>Default</h6></a>
+            <% listNames.forEach(listName => { %>
+                <hr>
+                <div class="d-flex justify-content-between align-items-center listNames">
+                    <a class="text-decoration-none" href="/lists/<%= listName %>"> <h6><%= listName %></h6></a>
+                    <a class="text-dark" href="/deleteList/<%= listName %>"><i class="fas fa-trash-alt"></i></a>
+                </div>
+           <% }) %> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+<%- include("partials/footer") %>

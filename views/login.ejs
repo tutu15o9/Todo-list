@@ -1,0 +1,33 @@
+<%- include("partials/header") %>
+<div class="container">
+    <h1>Daily Planner <i class="fas fa-clipboard-list"></i></h1>
+    <p class="ml-2 text-light">
+        Rename your “To-Do” list to your “Opportunities” list. Each day is a treasure chest filled with limitless
+        opportunities; take joy in checking many off your list.
+        <br>
+        Must try Weather <i class="fas fa-cloud-sun-rain"></i> Check before setting some outdoor task.
+    </p>
+    <hr>
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <h1 class="text-center">Log In</h1>
+            <form action="/login" method="post">
+                <label class="text-light" for="">Email</label>
+                <input class="form-control" type="email" name="username" placeholder="enter email" autofocus required>
+                <br>
+                <label class="text-light" for="">Password</label>
+                <input class="form-control" type="password" name="password" placeholder="enter password" required> <br>
+                <div class="d-flex flex-column justify-content-between align-items-center">
+                    <button class="btn btn-dark shadow" type="submit">LOGIN</button>
+                    <div class="d-flex jistify-content-around align-items-center text-light">
+                        <i class="fas fa-ellipsis-h fa-3x"></i><i class="fas fa-ellipsis-h fa-3x"></i>&ensp;<span
+                            class="text-monospace" style="font-size: large;">OR</span>&ensp;<i
+                            class="fas fa-ellipsis-h fa-3x"></i><i class="fas fa-ellipsis-h fa-3x"></i>
+                    </div>
+                    <a class="btn btn-dark shadow" href="/register">Register Now</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include("partials/footer") %>

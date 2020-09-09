@@ -1,0 +1,160 @@
+html {
+  min-height: 100%;
+}
+
+body {
+  background-color: #E4E9FD;
+  background-image: -webkit-linear-gradient(65deg, rgb(8, 91, 116), rgb(160, 156, 156));
+  height: 100%;
+  font-family: 'helvetica neue';
+}
+
+h1 {
+  color: #fff;
+  padding: 10px;
+}
+.header {
+  margin-top: 3px;
+  padding: 0.5% 2%;
+  border-radius: 50px;
+}
+.header .d-flex {
+  border-radius: 50px;
+}
+/* .header span {
+  font-size: xx-large;
+  margin: 0;
+  font-weight: bold;
+} */
+.header form {
+  font-size: large;
+}
+.header label {
+  color: #00204a;
+  font-weight: bold;
+  font-size: larger;
+}
+.header button {
+  margin: 2px 0;
+  border-radius: 10px;
+  /* background-color: rgb(34, 47, 168); */
+  color: #fff;
+  padding: 5px 20px;
+  border-width: 0;
+  box-shadow: 0.5px 0.5px 6px 1px grey;
+}
+td {
+  padding: 3px 20px;
+}
+.opaque {
+  opacity: 0.7;
+}
+
+.box {
+  max-width: 400px;
+  margin: 50px auto;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+.item {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #F1F1F1;
+}
+
+.item:last-child {
+  border-bottom: 0;
+}
+
+input:checked+p {
+  text-decoration: line-through;
+  text-decoration-color: rgb(42, 42, 43);
+}
+
+input[type="checkbox"] {
+  margin: 20px;
+}
+
+p#task {
+  margin: 0;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 200;
+  color: #00204a;
+}
+
+form.item {
+  text-align: center;
+  margin-left: 20px;
+}
+
+button.add {
+  min-height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border-color: transparent;
+  /* background-color: rgb(9, 20, 119); */
+  color: #fff;
+  font-weight: bold;
+  font-size: 30px;
+  /* padding-bottom: 6px; */
+  border-width: 0;
+  box-shadow: 0.5px 0.5px 6px 1px grey;
+}
+button.addListBtn {
+  height: 50px;
+  width: 60px;
+  border-radius: 50%;
+  border-color: transparent;
+  /* background-color: rgb(9, 20, 119); */
+  color: #fff;
+  font-weight: bold;
+  font-size: 25px;
+  /* padding-bottom: 6px; */
+  border-width: 0;
+  box-shadow: 0.5px 0.5px 6px 1px grey;
+}
+
+
+.box input[type="text"] {
+  text-align: center;
+  height: 60px;
+  top: 10px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  font-weight: 200;
+  width: 313px;
+}
+
+.box input[type="text"]:focus {
+  outline: none;
+  box-shadow: inset 0 -3px 0 0 rgb(55, 55, 56);
+}
+
+::placeholder {
+  color: grey;
+  opacity: 1;
+}
+
+footer {
+  padding: 1%;
+  text-align: center;
+}
+
+@media (max-width: 775px) {
+  .header {
+    margin-top: 0;
+    padding: 0.5% 2%;
+    border-radius: 0 0 5px 5px;
+  }
+}
+
+/**************************************************** login-signup ***********************************************/
+
+.shadow {
+  box-shadow: 1px 1px 8px 1px black;
+}
